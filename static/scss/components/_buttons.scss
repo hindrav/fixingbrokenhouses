@@ -1,0 +1,16 @@
+.hero__btn, .contact__btn{
+    background: transparent;
+    outline: 2px solid #fff;
+    border-radius: 7px;
+    color: #fff;
+}
+.hero__btn:hover, .contact__btn:hover{
+    background-color: #fff;
+    color: #212529;
+}
+.hero__btn{
+    width: 160px;
+}
+.contact__btn{
+    width: 220px;
+}

@@ -1,0 +1,100 @@
+.about{
+    width: 100%;
+    height: 100%;
+    &-bg1{
+        background-image: url('./images/bg6.jpg');
+        height: 300px;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    &-bg-overlay{
+        width: 100%;
+        height: 100%;
+        @include flex-col;
+        @include flex-center;
+        background-color: rgba(0,0,0,0.6);
+        & h2{
+            text-align: center;
+            color: rgb(197, 197, 197);
+            font-size: 2.6rem;
+        }
+        & p{
+            text-align: center;
+            color: rgb(197, 197, 197);
+            font-size: 1.2rem;
+        }
+    }
+    &-text{
+        background: white;
+        padding: 230px 30px 30px 30px;
+        font-style: oblique;
+        text-align: center;
+    }
+    &-content{
+        @include flex-col;
+        @include flex-center;
+    }
+}
+
+.totl{
+    background: $secondary;
+    color: white;
+}
+
+@media screen and(min-width: $bp-tab){
+    .about{
+        &-bg1{
+            height: 500px;
+        }
+        &-bg-overlay{
+            & h2{
+                font-size: 2.8rem;
+            }
+            & p{
+                font-size: 1.4rem;
+            }
+        }
+        &-text{
+            padding: 230px 95px 30px 95px;
+        }
+    }
+}
+
+@media screen and(min-width: $bp-lap){
+    .about{
+        &-text{
+            font-size: 1.1rem;
+            padding: 240px 155px 30px 155px;
+        }
+    }
+}
+
+@media screen and(min-width: $bp-desk){
+    .about{
+        &-bg1{
+            height: 500px;
+        }
+        &-bg-overlay{
+            & h2{
+                font-size: 3rem;
+            }
+            & p{
+                font-size: 1.6rem;
+            }
+        }
+        &-text{
+            font-size: 1.2rem;
+            padding: 240px 250px 80px 250px;
+        }
+    }
+}
+
+@media screen and(min-width: $bp-desk-large){
+    .about{
+        &-text{
+            padding: 240px 350px 80px 350px;
+        }
+    }
+}

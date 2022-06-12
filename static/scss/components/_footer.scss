@@ -1,0 +1,11 @@
+#footer{
+    @include flex-col;
+    @include flex-center;
+    padding: 30px 15px;
+    background-color: $secondary;
+}
+
+.rsmall{
+    text-align: center;
+    color: $discreet-text;
+}

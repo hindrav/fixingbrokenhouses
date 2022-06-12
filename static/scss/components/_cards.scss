@@ -1,0 +1,106 @@
+.card{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    @include bg;
+    border-radius: 20px;
+    z-index: 1;
+    overflow: hidden;
+    &-content{
+        padding: 15px 25px;
+        height: 100%;
+        opacity: 0;
+        transition: opacity .25s;
+        @include flex-col;
+        @include flex-center;
+    }
+    &-title, &-desc{
+        color: $discreet-text;
+        text-align: center;
+    }
+    &-title{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    &-desc{
+        font-size: 1rem;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+}
+.pj1{
+    background-image: url('./images/hero1.jpg');
+}
+.pj2{
+    background-image: url('./images/hero3.jpg');
+}
+.pj3{
+    background-image: url('./images/hero2.jpg');
+}
+.card::after, .card::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(60% + 35px);
+    background-color: #fff;
+    transition: transform .5s .25s ease-in;
+    z-index: -1;
+}
+.card::before{
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+    transform: translateY(-100%);
+}
+.card::after{
+    bottom: 0;
+    clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+    transform: translateY(100%);
+}
+.card:hover::before, .card:hover::after{
+    transform: translateY(0);
+}
+.card:hover .card-content{
+    opacity: 1;
+    transition-delay: .75s;
+}
+
+@media screen and(min-width: $bp-md){
+    .card{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and(min-width: $bp-ld){
+    .card{
+        width: 350px;
+    }
+}
+
+@media screen and(min-width: $bp-tab){
+    .card{
+        width: 390px;
+    }
+}
+
+@media screen and (min-width: $bp-desk){
+    .card{
+        width: 445px;
+        height: 330px;
+    }
+    .card:nth-child(2){
+        height: 380px;
+    }
+}
+@media screen and (min-width: $bp-desk-large){
+    .card{
+        width: 480px;
+        height: 330px;
+    }
+    .card:nth-child(2){
+        height: 380px;
+    }
+}

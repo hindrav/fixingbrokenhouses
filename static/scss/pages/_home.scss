@@ -1,0 +1,201 @@
+// Hero
+// --------------------------------------------------
+.hero{
+    min-height: 100%;
+    height: 570px;
+    background-image: url('./images/hero4.jpg');
+    @include bg;
+    background-attachment: fixed;
+    &-overlay{
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        &--header{
+            height: 100%;
+            @include flex-col;
+            @include flex-center;
+            text-align: center;
+            padding: 0 25px;
+            color: white;
+        }
+    }
+    &__title{
+        width: 290px;
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    &__text{
+        width: 290px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+    &__icon{
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+    }
+}
+
+// Our work
+// --------------------------------------------------
+.hlts{
+    height: 100%;
+    padding: 50px 0;
+    &-header{
+        @include flex-col;
+        margin-bottom: 25px;
+        text-align: center;
+        & h1{
+            font-weight: 600;
+        }
+        & p{
+            color: $discreet-text;
+        }
+    }
+    &-body{
+        width: 100%;
+        height: 100%;
+        @include flex-col;
+        @include flex-center;
+    }
+}
+
+// Contact
+// --------------------------------------------------
+.contact{
+    background-color: $primary;
+    width: 100%;
+    height: 100%;
+    @include flex-col;
+    @include flex-center;
+    padding: 30px 0;
+    color: white;
+    &-header{
+        text-align: center;
+    }
+    &-colA{
+        display: none;
+    }
+    &-colB{
+        width: fit-content;
+        height: 100%;
+        padding: 30px 15px;
+    }
+}
+
+// Media Querys
+// --------------------------------------------------
+
+@media screen and (min-width: $bp-md){
+    .hero{
+        height: 570px;
+        &__title{
+            width: 100%;
+            font-size: 1.75rem;
+        }
+        &__text{
+            font-size: 1.075rem;
+        }
+        &__icon{
+            font-size: 3.6rem;
+        }
+    }
+}
+
+@media screen and (min-width: $bp-tab){
+    .hero{
+        &__title{
+            font-size: 2.5rem;
+        }
+        &__text{
+            width: 600px;
+            font-size: 1.15rem;
+        }
+        &__icon{
+            font-size: 3.8rem;
+        }
+    }
+    .hlts{
+        padding: 80px 0;
+        &-header{
+            margin-bottom: 55px;
+            & h1{
+                font-size: 2.3rem;
+            }
+            & p{
+                color: $discreet-text;
+            }
+        }
+        &-body{
+            width: 100%;
+            height: 100%;
+            @include flex-col;
+            @include flex-center;
+        }
+    }
+}
+@media screen and (min-width: $bp-generic){
+    .hero{
+        height: 768px;
+        &__title{
+            font-size: 2.4rem;
+        }
+        &__text{
+            font-size: 1.3rem;
+        }
+        &__icon{
+            font-size: 4.5rem;
+        }
+    }
+    .hlts{
+        padding: 80px 0;
+        &-body{
+            @include flex-row;
+            @include flex-center;
+        }
+    }
+}
+@media screen and(min-width: $bp-desk){
+    .contact{
+        padding: 0;
+        &-body{
+            @include flex-row;
+            @include flex-center;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        &-colA{
+            margin: 0 auto;
+            height: 100%;
+            @include flex-col;
+            @include flex-center;
+            width: fit-content;
+            & img{
+                width: 520px;
+                filter: brightness(0.8);
+            }
+            transform: translateX(100px);
+        }
+        &-colB{
+            margin: 0 auto;
+            transform: translateX(-100px);
+        }
+    }
+}
+@media screen and(min-width: $bp-desk-large){
+    .hero{
+        height: 85vh;
+    }
+    .hlts{
+        &-body{
+            padding: 0 55px;
+        }
+    }
+    .contact{
+        &-colB{
+            transform: translateX(-150px);
+        }
+    }
+}

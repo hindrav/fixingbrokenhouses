@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <!-- <a class="navbar-brand-logo" href="#">
+            <img src=" {{ url_for('static', filename='images/b-logo.png') }}" alt="FBG logo" />
+        </a> -->
+        <div class="navbar-brand-action">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="container-fluid">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    {% if request.path == '/home' %}<a class="nav-link active" aria-current="page" href="{{ url_for('homepage') }}">Home</a>
+                    {% else %} <a class="nav-link" href="{{ url_for('homepage') }}">Home</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if request.path == '/about' %}<a class="nav-link active" aria-current="page" href="{{ url_for('about') }}">About</a>
+                    {% else %} <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    {% endif %}
+                </li>
+                {% if request.path == '/home' %}
+                <li class="nav-item">
+                    {% if request.path == '/contact' %}<a class="nav-link active" aria-current="page" href="{{ url_for('contact') }}">Contact</a>
+                    {% else %} <a class="nav-link" href="#Contact">Contact</a>
+                    {% endif %}
+                </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Properties
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">For sell</a></li>
+                        <li><a class="dropdown-item" href="#">For rent</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

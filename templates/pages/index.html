@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="container hero-overlay--header">
+            <i class="fa-solid fa-screwdriver-wrench hero__icon"></i>
+            <h1 class="hero__title">Fixing Broken Houses</h1>
+            <p class="hero__text">We'll show you the true meaning of custom</p>
+            <button type="button" class="btn hero__btn">Get Started</button>
+        </div>
+    </div>
+</section>
+<section class="hlts">
+    <!-- <div class="hlts-header">
+            <h1>Latest projects</h1>
+        </div> -->
+    <div class="hlts-body">
+        <article class="card pj1">
+            <div class="card-content">
+                <h3 class="card-title">Dallas, TX</h3>
+                <p class="card-desc">Custom remodel with quality materials that provide a luxurious look.</p>
+            </div>
+        </article>
+        <article class="card pj2">
+            <div class="card-content">
+                <h3 class="card-title">Dallas, TX</h3>
+                <p class="card-desc">Custom remodel with quality materials that provide a luxurious look.</p>
+            </div>
+        </article>
+        <article class="card pj3">
+            <div class="card-content">
+                <h3 class="card-title">Dallas, TX</h3>
+                <p class="card-desc">Custom remodel with quality materials that provide a luxurious look.</p>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="contact" id="Contact">
+    <div class="contact-body">
+        <div class="contact-colA">
+            <img src=" {{ url_for('static', filename='images/builder.png') }}" alt="">
+        </div>
+        <div class="contact-colB">
+            <div class="contact-header">
+                <h1>Get in a touch</h1>
+                <p>One of our agents will contact you as soon as possible.</p>
+            </div>
+            <form action="" class="contact-form" method="POST">
+                <div class="input-group">
+                    <input type="text" id="name" required class="input" aria-label="First name">
+                    <label for="name" class="input-label">Your name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required class="input" aria-label="Email">
+                    <label for="email" class="input-label">Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" id="phone" required class="input" aria-label="Phone">
+                    <label for="phone" class="input-label">Phone</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="message" required class="input" aria-label="Message"></textarea>
+                    <label for="message" class="input-label">Message</label>
+                </div>
+
+                <button type="submit" class="btn contact__btn mt-3">Send Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

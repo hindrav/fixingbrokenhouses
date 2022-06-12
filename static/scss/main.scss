@@ -1,0 +1,37 @@
+// ** Base **
+// --------------------------------------------------------------
+@import 'base/init';
+@import 'base/typography';
+
+//  ** Libraries **
+// --------------------------------------------------------------
+@import 'libs/vars';
+@import 'libs/mixins';
+@import 'libs/functions';
+
+// ** Components **
+// --------------------------------------------------------------
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/cards';
+@import 'components/navbar';
+@import 'components/footer';
+
+//  ** Pages **
+// --------------------------------------------------------------
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/properties';
+
+// ** Sketch **
+// --------------------------------------------------------------
+@import 'sketch/lamp';
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 10px;
+}

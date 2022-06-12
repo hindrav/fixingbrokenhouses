@@ -1,0 +1,60 @@
+.contact{
+    &-form{
+        width: fit-content;
+        @include flex-col;
+        @include flex-center;
+    }
+    &-colB{
+        @include flex-col;
+        @include flex-center;
+        margin: 0 auto;
+    }
+}
+.input-group{
+    border: none;
+    position: relative;
+    width: 270px;
+    margin: 12px auto;
+}
+.input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    outline: 2px solid rgb(227, 227, 227);
+    border-radius: 7px !important;
+}
+.input-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $text-contrast;
+    transform: translate(10px, 10px);
+    transition: transform .25s;
+}
+.input:focus+.input-label,
+.input:valid+.input-label{
+    transform: translate(10px, -14px) scale(.8);
+    padding-inline: 5px;
+    color: $text-contrast;
+    background-color: #242329;
+}
+.input:is(:focus, :valid){
+    outline-color: $text-contrast;
+}
+@media screen and(min-width: $bp-md){
+    .input-group{
+        width: 310px;
+    }
+}
+@media screen and(min-width: $bp-ld){
+    .input-group{
+        width: 330px;
+    }
+}
+@media screen and(min-width: $bp-lap){
+    .input-group{
+        width: 420px;
+    }
+}
